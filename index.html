@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECDSA Digital Signature</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-signature"></i> ECDSA Digital Signature</h1>
+            <p class="subtitle">Secure message signing and verification</p>
+        </header>
+        
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-pen"></i> Sign Message
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="message">Message to Sign</label>
+                    <textarea id="message" placeholder="Enter your message here..."></textarea>
+                </div>
+                <button id="signButton" class="btn primary">
+                    <i class="fas fa-signature"></i> Sign Message
+                </button>
+                <div class="form-group">
+                    <label for="signature">Generated Signature</label>
+                    <textarea id="signature" readonly></textarea>
+                    <button id="copySignature" class="btn secondary">
+                        <i class="fas fa-copy"></i> Copy Signature
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-key"></i> Key Management
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="privateKey">Private Key (hex)</label>
+                    <div class="input-group">
+                        <input type="text" id="privateKey" readonly>
+                        <button id="copyPrivateKey" class="btn secondary">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="publicKey">Public Key (hex)</label>
+                    <div class="input-group">
+                        <input type="text" id="publicKey" readonly>
+                        <button id="copyPublicKey" class="btn secondary">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+                <button id="generateNewKey" class="btn primary">
+                    <i class="fas fa-sync-alt"></i> Generate New Key Pair
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-check-circle"></i> Verify Signature
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="signatureToVerify">Signature to Verify</label>
+                    <textarea id="signatureToVerify" placeholder="Paste the signature here..."></textarea>
+                </div>
+                <button id="verifyButton" class="btn primary">
+                    <i class="fas fa-shield-alt"></i> Verify Signature
+                </button>
+                <div id="verificationResult" class="verification-result"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/elliptic/6.5.0/elliptic.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
