@@ -48,6 +48,13 @@ h1 {
     font-size: 1.1rem;
 }
 
+.version {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
 .card {
     background: var(--card-background);
     border-radius: var(--border-radius);
@@ -100,24 +107,6 @@ textarea:focus {
 textarea[readonly] {
     background-color: #f8fafc;
     cursor: default;
-}
-
-.select-input {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #e2e8f0;
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    font-family: inherit;
-    background-color: white;
-    cursor: pointer;
-    transition: all var(--transition-speed);
-}
-
-.select-input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .btn {

@@ -1,6 +1,6 @@
 {
   "name": "ecdsa_signature_app",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A simple web app for ECDSA digital signatures",
   "main": "app.js",
   "scripts": {
