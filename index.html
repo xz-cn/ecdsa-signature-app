@@ -3,39 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECDSA Digital Signature</title>
+    <title>Digital Signature App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1><i class="fas fa-signature"></i> ECDSA Digital Signature</h1>
+            <h1><i class="fas fa-signature"></i> Digital Signature</h1>
             <p class="subtitle">Secure message signing and verification</p>
         </header>
-        
+
         <div class="card">
             <div class="card-header">
-                <i class="fas fa-pen"></i> Sign Message
+                <i class="fas fa-cog"></i> Signature Settings
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <label for="message">Message to Sign</label>
-                    <textarea id="message" placeholder="Enter your message here..."></textarea>
-                </div>
-                <button id="signButton" class="btn primary">
-                    <i class="fas fa-signature"></i> Sign Message
-                </button>
-                <div class="form-group">
-                    <label for="signature">Generated Signature</label>
-                    <textarea id="signature" readonly></textarea>
-                    <button id="copySignature" class="btn secondary">
-                        <i class="fas fa-copy"></i> Copy Signature
-                    </button>
+                    <label for="signatureScheme">Signature Scheme</label>
+                    <select id="signatureScheme" class="select-input">
+                        <option value="ecdsa">ECDSA (secp256k1)</option>
+                        <option value="ed25519">ED25519</option>
+                        <option value="schnorr">Schnorr</option>
+                    </select>
                 </div>
             </div>
         </div>
-
+        
         <div class="card">
             <div class="card-header">
                 <i class="fas fa-key"></i> Key Management
@@ -67,6 +61,28 @@
 
         <div class="card">
             <div class="card-header">
+                <i class="fas fa-pen"></i> Sign Message
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="message">Message to Sign</label>
+                    <textarea id="message" placeholder="Enter your message here..."></textarea>
+                </div>
+                <button id="signButton" class="btn primary">
+                    <i class="fas fa-signature"></i> Sign Message
+                </button>
+                <div class="form-group">
+                    <label for="signature">Generated Signature</label>
+                    <textarea id="signature" readonly></textarea>
+                    <button id="copySignature" class="btn secondary">
+                        <i class="fas fa-copy"></i> Copy Signature
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
                 <i class="fas fa-check-circle"></i> Verify Signature
             </div>
             <div class="card-body">
@@ -81,7 +97,10 @@
             </div>
         </div>
     </div>
+    <!-- Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/elliptic/6.5.0/elliptic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@noble/ed25519@1.7.3/lib/index.browser.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/noble-secp256k1@1.2.14/index.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
