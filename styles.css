@@ -48,6 +48,18 @@ h1 {
     font-size: 1.1rem;
 }
 
+.author {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    margin-top: 0.75rem;
+}
+
+.author .highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-family: monospace;
+}
+
 .version {
     color: var(--secondary-color);
     font-size: 0.9rem;
