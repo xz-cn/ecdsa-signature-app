@@ -1,6 +1,6 @@
 {
   "name": "ecdsa_signature_app",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "A simple web app for ECDSA digital signatures",
   "main": "app.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "dependencies": {
     "@noble/ed25519": "^2.1.0",
     "@noble/hashes": "^1.6.1",
+    "@noble/secp256k1": "^1.7.1",
     "elliptic": "^6.6.1"
   },
   "devDependencies": {
